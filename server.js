@@ -3,7 +3,7 @@ const express = require("express");
 const fs = require("fs").promises;
 const marked = require("marked");
 
-const file = process.argv[3] || "test.md";
+const file = process.argv[2] || "test.md";
 const app = express();
 const watchers = new Set();
 let html;
