@@ -9,7 +9,7 @@ const watchers = new Set();
 let html;
 
 chokidar.watch(file).on("all", async (evt, path, stats) => {
-  html = marked((await fs.readFile(path)).toString());
+  html = marked.parse((await fs.readFile(path)).toString());
 
   for (const res of watchers) {
     res.write(html);
