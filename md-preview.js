@@ -3,7 +3,7 @@ const express = require("express");
 const fs = require("fs").promises;
 const marked = require("marked");
 
-const file = process.argv[3] || "test.md";
+const file = process.argv[2] || "test.md";
 const app = express();
 const watchers = new Set();
 let html;
@@ -90,6 +90,6 @@ app.get("/", (request, response) => {
 });
 
 const listener = app.listen(process.env.PORT || 3000, () =>
-  console.log(`Your app is listening on port ${listener.address().port}`)
+  console.log(`running on port ${listener.address().port}`)
 );
 
